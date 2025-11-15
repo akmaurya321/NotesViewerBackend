@@ -6,8 +6,13 @@ import time
 import uuid
 import requests
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
+
+
 
 # ---------- CONFIG (set these as Render env vars) ----------
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")             # token with repo contents:read+write on frontend repo
